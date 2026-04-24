@@ -1,0 +1,23 @@
+name: Test API Template
+
+on:
+  workflow_call: # Permite ser llamado por el repo cliente
+
+jobs:
+  pruebas:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Descargar el codigo del repo
+        uses: actions/checkout@v4
+
+      - name: 2. Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Instalamos una versión estable de Node
+
+      - name: 3. Instalar dependencias
+        run: npm install
+
+      - name: 4. Ejecutar Pruebas
+        run: npm test
