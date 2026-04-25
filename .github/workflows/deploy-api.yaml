@@ -9,7 +9,7 @@ on:
         type: string
       image-tag:
         description: "Tag v1.0.0"
-        required: true #cambio
+        required: true 
         type: string
     secrets:
       DOCKER_USERNAME:
