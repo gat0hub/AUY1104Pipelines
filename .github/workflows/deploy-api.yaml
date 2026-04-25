@@ -1,7 +1,7 @@
 name: Deploy API to Docker Hub
 
 on:
-  workflow_call:              # Permite ser llamado por otros repositorios
+  workflow_call:              
     inputs:
       image-name:
         description: "Nombre de la imagen docker"
@@ -13,9 +13,9 @@ on:
         type: string
     secrets:
       DOCKER_USERNAME:
-        required: true        # El caller DEBE pasar este secreto
+        required: true        
       DOCKER_PASSWORD:
-        required: true        # El caller DEBE pasar este secreto
+        required: true        
   
   workflow_dispatch:
     inputs:
@@ -23,12 +23,12 @@ on:
         description: "Mi coso"
         required: true
         type: string
-      image-tag:   # Permite ejecución manual desde GitHub UI
+      image-tag:   
         description: "v1.0.0"
         required: true
         type: string
 
-jobs: #cambiar todo
+jobs: 
   pasos-en-la-nube:
     name: Build and Push Docker image
     runs-on: ubuntu-latest
